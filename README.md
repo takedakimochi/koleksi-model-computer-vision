@@ -36,7 +36,9 @@ koleksi-model-computer-vision/
     └── wajah/                      # 👤 Model Deteksi Wajah (Face Detection)
         ├── yolov8n-face.pt         # Face Detection Nano
         ├── yolov8m-face.pt         # Face Detection Medium
-        └── yolov8l-face.pt         # Face Detection Large (Akurasi paling mantap)
+        ├── yolov8l-face.pt         # Face Detection Large (Akurasi paling mantap)
+        ├── yolov8n_100e.pt         # Face Detection Nano (Training 100 Epochs)
+        └── yolov8m_200e.pt         # Face Detection Medium (Training 200 Epochs)
 ```
 
 ---
@@ -48,6 +50,8 @@ Model khusus buat nemuin posisi wajah di gambar/video stream:
 * **`yolov8n-face.pt`**: Sangat cocok buat device hemat daya/Edge Devices (Raspberry Pi, HP, webcam laptop kentang).
 * **`yolov8m-face.pt`**: Pilihan seimbang buat server / PC dengan GPU standar.
 * **`yolov8l-face.pt`**: Paling akurat, cocok buat deteksi wajah jarak jauh atau gambar beresolusi tinggi.
+* **`yolov8n_100e.pt`**: Versi Nano yang udah digembleng 100 epoch, lebih joss & presisi dibanding nano biasa buat device ringan.
+* **`yolov8m_200e.pt`**: Versi Medium yang udah ditraining matang 200 epoch, performa makin jos & stabil buat deteksi wajah.
 
 ### 2. 🪖 Deteksi Kepala & Helm (`Yolo/helm/`)
 Model spesifik buat cek orang pake helm atau enggak (cocok buat sistem K3 / Keselamatan Kerja atau TILANG Elektronik):
