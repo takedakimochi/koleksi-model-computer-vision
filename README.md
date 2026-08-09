@@ -1,7 +1,7 @@
 # 🤖 Koleksi Model Computer Vision (YOLOv8 Repository)
 
 Selamat datang di **Gudang Harta Karun Computer Vision**! 🚀  
-Folder ini isinya kumpulan *pre-trained weight* (`.pt`) model **YOLOv8** yang udah siap pakai buat berbagai kebutuhan *object detection*, mulai dari yang standar sampai yang spesifik kayak deteksi wajah, helm, drone, tempat parkir, hingga plat nomor kendaraan Indonesia!
+Folder ini isinya kumpulan *pre-trained weight* (`.pt`) model **YOLOv8** yang udah siap pakai buat berbagai kebutuhan *object detection*, mulai dari yang standar sampai yang spesifik kayak deteksi wajah, helm, kepala, manusia, drone, tempat parkir, hingga plat nomor kendaraan Indonesia!
 
 ---
 
@@ -13,18 +13,21 @@ Berikut adalah peta lokasi harta karun model yang ada di dalam repository ini:
 koleksi-model-computer-vision/
 ├── README.md
 └── Yolo/
-    ├── yolov8n.pt                  # YOLOv8 Nano (Super ringan & cepat)
-    ├── yolov8s.pt                  # YOLOv8 Small (Balance kecepatan & akurasi)
-    ├── yolov8m.pt                  # YOLOv8 Medium (Akurasi lebih joss)
-    ├── yolov8n_person.pt           # Deteksi Orang/Manusia (Nano)
-    ├── yolov8m-drone.pt            # Deteksi Drone di Udara (Medium)
-    ├── yolov8m-football.pt         # Deteksi Bola & Pemain Sepak Bola (Medium)
-    ├── yolov8m-parking.pt          # Deteksi Mobil & Slot Parkir (Medium)
-    │
-    ├── helm/                       # 🪖 Model Deteksi Kepala & Helm
+    ├── helm/                       # 🪖 Model Deteksi Kepala & Helm (NLF)
     │   ├── yolov8n-nlf-head-detection.pt
     │   ├── yolov8s-nlf-head-detection.pt
     │   └── yolov8m-nlf-head-detection.pt
+    │
+    ├── kepala/                     # 🗣️ Model Deteksi Kepala
+    │   └── kepala.pt
+    │
+    ├── lain-lain/                  # 🛸 Model Spesifik Lainnya
+    │   ├── yolov8m-drone.pt        # Deteksi Drone di Udara (Medium)
+    │   ├── yolov8m-football.pt     # Deteksi Bola & Pemain Sepak Bola (Medium)
+    │   └── yolov8m-parking.pt      # Deteksi Mobil & Slot Parkir (Medium)
+    │
+    ├── manusia/                    # 🧍 Model Deteksi Manusia
+    │   └── yolov8n_person.pt       # Deteksi Orang/Manusia (Nano)
     │
     ├── plat_nomor/                 # 🚘 Model Deteksi Plat Nomor Indonesia
     │   ├── yolov8s_box_plat_nomor_indonesia_1280.pt   # Bounding Box Plat Nomor (Res 1280)
@@ -52,16 +55,23 @@ Model spesifik buat cek orang pake helm atau enggak (cocok buat sistem K3 / Kese
 * **`yolov8s-nlf-head-detection.pt`**
 * **`yolov8m-nlf-head-detection.pt`**
 
-### 3. 🚘 Deteksi Plat Nomor Indonesia (`Yolo/plat_nomor/`)
+### 3. 🗣️ Deteksi Kepala (`Yolo/kepala/`)
+Model khusus untuk mendeteksi bagian kepala:
+* **`kepala.pt`**: Model deteksi kepala versi medium (50MB) yang presisi buat ngenali kepala manusia.
+
+### 4. 🧍 Deteksi Manusia (`Yolo/manusia/`)
+Model khusus fokus ke objek manusia:
+* **`yolov8n_person.pt`**: Versi Nano super enteng khusus deteksi manusia/person.
+
+### 5. 🚘 Deteksi Plat Nomor Indonesia (`Yolo/plat_nomor/`)
 Model *custom-tuned* buat membaca kendaraan dan plat nomor di Indonesia:
 * **`yolov8s_box_plat_nomor_indonesia_1280.pt`**: Mencari area/kotak plat nomor pada kendaraan (Image size: 1280px).
 * **`yolov8s_huruf_angka_plat_nomor_indonesia_640.pt`**: Membaca karakter angka dan huruf pada plat nomor (Image size: 640px).
 
-### 4. 🛸 Model Spesifik Lainnya (`Yolo/`)
+### 6. 🛸 Model Spesifik Lainnya (`Yolo/lain-lain/`)
 * **`yolov8m-drone.pt`**: Memantau dan mendeteksi objek drone di langit.
 * **`yolov8m-football.pt`**: Mengacak-acak dan mendeteksi bola serta pemain di lapangan hijau.
 * **`yolov8m-parking.pt`**: Analisis tempat parkir dan ketersediaan slot kendaraan.
-* **`yolov8n_person.pt`**: Khusus deteksi keberadaan manusia.
 
 ---
 
@@ -107,3 +117,4 @@ cv2.destroyAllWindows()
 
 ---
 *Happy Coding & Detection!* 💥
+
